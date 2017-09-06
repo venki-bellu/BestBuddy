@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "897677662988",
+    "firebase_url": "https://best-buddy-717e3.firebaseio.com",
+    "project_id": "best-buddy-717e3",
+    "storage_bucket": "best-buddy-717e3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:897677662988:android:1d671fd0c9638bd3",
+        "android_client_info": {
+          "package_name": "com.uvce.bestbuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "897677662988-33s3nhqu105hl9aauibcvlodrk9n1nav.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.uvce.bestbuddy",
+            "certificate_hash": "e1cd9684d822f089c95f381a816ca31f6de3d670"
+          }
+        },
+        {
+          "client_id": "897677662988-1i2lg3ivqb2roesetk2bufhhi7tp09ab.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVqXldRapDWamlRWiPyLPbAR-FhAsb6iU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "897677662988-1i2lg3ivqb2roesetk2bufhhi7tp09ab.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
