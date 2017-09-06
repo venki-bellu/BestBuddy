@@ -4,18 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.uvce.bestbuddy.MainActivity">
+    tools:context="com.uvce.bestbuddy.MainActivity"
+    android:background="#eeeeee">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/tool_bar"/>
 
+    <EditText
+        android:id="@+id/dairy_input"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/toolbar"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        android:hint="What's on your mind.."
+        android:gravity="top"/>
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="Click me"
-        android:onClick="gotClicked"
+        android:text="Thats it for today"
+        android:onClick="submitDairy"
+        android:layout_below="@id/dairy_input"
         />
 
 </RelativeLayout>
