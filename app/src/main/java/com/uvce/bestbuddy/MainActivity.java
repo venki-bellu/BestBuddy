@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference ref;
     EditText dairyInput;
-    String numberOfPosts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,12 +52,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitDairy(View v)
     {
-        String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
-        numberOfPosts="5";
+        final String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
+        final HashMap hashMap=new HashMap();
+        hashMap.put("Date",currentDateTimeString);
+        hashMap.put("Record",dairyInput.getText().toString().trim());
+        hashMap.put("Score",0);
+
         ref.child("Post Count").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                numberOfPosts=dataSnapshot.getValue(String.class);
+                Integer numberOfPosts = Integer.parseInt(dataSnapshot.getValue().toString());
+                numberOfPosts += 1;
+
+                String key = "Post " + numberOfPosts.toString();
+                System.out.println(key);
+                ref.child(key).setValue(hashMap);
+
+                ref.child("Post Count").setValue(numberOfPosts);
+                ref.removeEventListener(this);
             }
 
             @Override
@@ -66,13 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        HashMap hashMap=new HashMap();
-        hashMap.put("Date",currentDateTimeString);
-        hashMap.put("Record",dairyInput.getText().toString().trim());
-        hashMap.put("Score",0);
 
-
-        ref.child("Post "+numberOfPosts).setValue(hashMap);
 
         Toast.makeText(getApplicationContext(),"Your day has been saved",Toast.LENGTH_LONG).show();
         dairyInput.setText(null);
